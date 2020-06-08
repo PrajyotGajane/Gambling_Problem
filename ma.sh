@@ -17,6 +17,7 @@ else
 fi
 echo "Won : $won$"
 echo "Lost : $lost$"
+
 #UC 3 logic updated to UC 4 updated to UC 5
 echo
 declare -a day
@@ -79,12 +80,14 @@ for (( i=0; i<$month; i++ ))
 do
 	if [[ ${day[$i]} -ge $MAX ]]
 	then
+		#echo "MAX loop running ---------------"
 		MAX=${day[$i]}
 		lucky[$j]=$(($i))
 		let "j+=1"
 	fi
 	if [[ ${day[$i]} -le $MIN ]]
 	then
+		#echo "MIN loop running ----------------"
 		MIN=${day[$i]}
 		unlucky[$k]=$(($i))
 		let "k+=1"
@@ -107,7 +110,7 @@ do
 	fi
 done
 }
-echo
+
 #UC & logic below
 while [[ $work -gt 0 ]]
 do
