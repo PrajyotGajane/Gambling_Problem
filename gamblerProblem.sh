@@ -119,7 +119,7 @@ do
 		read n
 		case $n in
 			1)
-			start
+			continue
 			;;
 			2)
 			work=-1
