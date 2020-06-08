@@ -1,3 +1,4 @@
+#!/bin/bash -x
 echo "Welcome to the gambling simultation program"
 stake=100
 gambler_stake=100
@@ -65,3 +66,41 @@ then
 else
 	echo "Won by $ammount$"
 fi
+#UC 6 implementation
+MAX=${day[0]}
+declare -a lucky
+declare -a unlucky
+j=0
+k=0
+MIN=${day[0]}
+for (( i=0; i<$month; i++ ))
+do
+	if [[ ${day[$i]} -ge $MAX ]]
+	then
+		#echo "MAX loop running ---------------"
+		MAX=${day[$i]}
+		lucky[$j]=$(($i))
+		let "j+=1"
+	fi
+	if [[ ${day[$i]} -le $MIN ]]
+	then
+		#echo "MIN loop running ----------------"
+		MIN=${day[$i]}
+		unlucky[$k]=$(($i))
+		let "k+=1"
+	fi
+done
+for ele in ${lucky[@]}
+do
+	if [[ $MAX -eq ${day[$ele]} ]]
+	then
+	echo "Lukiest day is $(($ele+1))"
+	fi
+done
+for elem in ${unlucky[@]}
+do
+	if [[ $MIN -eq ${day[$elem]} ]]
+	then
+	echo "unlukiest day is $(($elem+1))"
+	fi
+done
