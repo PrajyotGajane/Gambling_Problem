@@ -53,10 +53,3 @@ done
 
 echo "Total amount left with the gambler = ${day[$i-1]}"
 
-#if [[ $dummy_stake -eq "150" ]]
-#then
-#	echo "Won : $(($dummy_stake - $stake))$"
-#else
-#	echo "Lost : $dummy_stake$"
-#fi
-
