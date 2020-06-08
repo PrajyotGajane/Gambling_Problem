@@ -90,17 +90,19 @@ do
 		let "k+=1"
 	fi
 done
-for ele in ${lucky[@]}
+echo
+for element1 in ${lucky[@]}
 do
-	if [[ $MAX -eq ${day[$ele]} ]]
+	if [[ $MAX -eq ${day[$element1]} ]]
 	then
-	echo "Lukiest day is $(($ele+1))"
+	echo "Lukiest day is $(($element1+1))"
 	fi
 done
-for elem in ${unlucky[@]}
+echo
+for element2 in ${unlucky[@]}
 do
-	if [[ $MIN -eq ${day[$elem]} ]]
+	if [[ $MIN -eq ${day[$element2]} ]]
 	then
-	echo "unlukiest day is $(($elem+1))"
+	echo "Unlukiest day is $(($element2+1))"
 	fi
 done
